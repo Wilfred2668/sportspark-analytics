@@ -89,13 +89,13 @@ export const VideoUploadCard = ({
   };
 
   return (
-    <Card className="bg-white/10 backdrop-blur border-white/20 shadow-card">
+    <Card className="bg-gradient-card backdrop-blur-xl border-white/20 shadow-card hover:shadow-glow transition-all duration-500">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Icon className="h-6 w-6 text-warning" />
+            <Icon className="h-6 w-6 text-warning drop-shadow-sm" />
             <div>
-              <CardTitle className="text-white">{title}</CardTitle>
+              <CardTitle className="text-white drop-shadow-sm">{title}</CardTitle>
               <p className="text-white/70 text-sm">{description}</p>
             </div>
           </div>

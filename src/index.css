@@ -17,48 +17,59 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Athletic Blue Primary */
-    --primary: 212 100% 45%;
+    /* Deep Ocean Blue Primary - More premium and sophisticated */
+    --primary: 220 91% 32%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 212 100% 60%;
+    --primary-glow: 220 91% 45%;
+    --primary-light: 220 91% 85%;
 
-    /* Energetic Orange Secondary */
-    --secondary: 25 95% 53%;
+    /* Vibrant Coral Secondary - Modern and energetic */
+    --secondary: 14 100% 57%;
     --secondary-foreground: 0 0% 100%;
+    --secondary-light: 14 100% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 25 95% 53%;
+    /* Electric Purple Accent - Premium feel */
+    --accent: 271 81% 56%;
     --accent-foreground: 0 0% 100%;
+    --accent-light: 271 81% 90%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 212 100% 45%;
+    --border: 220 13% 91%;
+    --input: 220 13% 94%;
+    --ring: 220 91% 32%;
 
-    /* Success for achievements */
-    --success: 142 76% 36%;
+    /* Emerald Success - Premium green */
+    --success: 160 84% 39%;
     --success-foreground: 0 0% 100%;
+    --success-light: 160 84% 90%;
 
-    /* Warning for in-progress */
-    --warning: 43 96% 56%;
+    /* Gold Warning - Luxury feel */
+    --warning: 45 93% 47%;
     --warning-foreground: 0 0% 0%;
+    --warning-light: 45 93% 90%;
 
-    /* Athletic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(212 100% 45%), hsl(212 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(212 100% 45%) 0%, hsl(25 95% 53%) 100%);
+    /* Premium gradients with multiple color stops */
+    --gradient-primary: linear-gradient(135deg, hsl(220 91% 32%) 0%, hsl(220 91% 45%) 50%, hsl(271 81% 56%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(14 100% 57%) 0%, hsl(25 100% 60%) 50%, hsl(35 100% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 91% 32%) 0%, hsl(271 81% 56%) 25%, hsl(14 100% 57%) 75%, hsl(45 93% 47%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(160 84% 39%) 0%, hsl(175 84% 45%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 91% 32% / 0.1) 0%, hsl(271 81% 56% / 0.05) 100%);
     
-    /* Shadows with primary color */
-    --shadow-primary: 0 10px 40px -10px hsl(212 100% 45% / 0.3);
-    --shadow-secondary: 0 10px 40px -10px hsl(25 95% 53% / 0.3);
-    --shadow-card: 0 4px 20px -2px hsl(212 10% 10% / 0.1);
+    /* Enhanced shadows with color */
+    --shadow-primary: 0 20px 60px -15px hsl(220 91% 32% / 0.4);
+    --shadow-secondary: 0 20px 60px -15px hsl(14 100% 57% / 0.4);
+    --shadow-accent: 0 20px 60px -15px hsl(271 81% 56% / 0.4);
+    --shadow-card: 0 8px 32px -8px hsl(220 91% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(220 91% 45% / 0.3);
 
     /* Smooth transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 

@@ -83,15 +83,15 @@ const Dashboard = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4">Sports Performance Assessment</h1>
+          <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">Sports Performance Assessment</h1>
           <p className="text-white/80 text-lg">Upload your videos for AI-powered analysis</p>
         </div>
 
         {/* Overall Progress */}
-        <Card className="mb-8 bg-white/10 backdrop-blur border-white/20">
+        <Card className="mb-8 bg-gradient-card backdrop-blur-xl border-white/20 shadow-glow">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
-              <Trophy className="h-6 w-6" />
+              <Trophy className="h-6 w-6 text-warning animate-pulse-glow" />
               Overall Progress
             </CardTitle>
           </CardHeader>
@@ -100,13 +100,13 @@ const Dashboard = () => {
               <ProgressTracker progress={overallProgress} />
               {allCompleted && (
                 <div className="text-center animate-fade-in-up">
-                  <Badge variant="secondary" className="mb-4 animate-badge-bounce">
+                  <Badge className="mb-4 animate-badge-bounce bg-gradient-success shadow-accent">
                     <CheckCircle2 className="h-4 w-4 mr-2" />
                     Analysis Complete!
                   </Badge>
                   <Button 
                     onClick={() => navigate('/report')}
-                    className="bg-gradient-secondary hover:shadow-secondary"
+                    className="bg-gradient-secondary hover:shadow-secondary transform hover:scale-105 transition-all duration-300"
                   >
                     View Results
                   </Button>
@@ -118,12 +118,12 @@ const Dashboard = () => {
 
         {/* Assessment Tabs */}
         <Tabs defaultValue="squat" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 bg-white/10 backdrop-blur">
+          <TabsList className="grid w-full grid-cols-3 bg-gradient-card backdrop-blur-xl border border-white/20">
             {assessments.map((assessment) => (
               <TabsTrigger 
                 key={assessment.id} 
                 value={assessment.id}
-                className="text-white data-[state=active]:bg-white/20"
+                className="text-white data-[state=active]:bg-gradient-primary data-[state=active]:shadow-primary transition-all duration-300"
               >
                 <assessment.icon className="h-4 w-4 mr-2" />
                 {assessment.title}

@@ -104,7 +104,7 @@ export const AthleteForm = ({ data, onChange, onSubmit }: AthleteFormProps) => {
       <Button 
         onClick={onSubmit}
         disabled={!isFormValid}
-        className="w-full bg-gradient-secondary hover:shadow-secondary text-lg py-6"
+        className="w-full bg-gradient-secondary hover:shadow-secondary text-lg py-6 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
       >
         <Play className="h-5 w-5 mr-2" />
         Start Assessment
