@@ -79,19 +79,19 @@ const Dashboard = () => {
   const overallProgress = Object.values(progress).reduce((acc, curr) => acc + curr, 0) / 3;
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">Sports Performance Assessment</h1>
-          <p className="text-white/80 text-lg">Upload your videos for AI-powered analysis</p>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Sports Performance Assessment</h1>
+          <p className="text-muted-foreground text-lg">Upload your videos for AI-powered analysis</p>
         </div>
 
         {/* Overall Progress */}
-        <Card className="mb-8 bg-gradient-card backdrop-blur-xl border-white/20 shadow-glow">
+        <Card className="mb-8 shadow-card border">
           <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <Trophy className="h-6 w-6 text-warning animate-pulse-glow" />
+            <CardTitle className="text-foreground flex items-center gap-2">
+              <Trophy className="h-6 w-6 text-primary" />
               Overall Progress
             </CardTitle>
           </CardHeader>
@@ -100,13 +100,13 @@ const Dashboard = () => {
               <ProgressTracker progress={overallProgress} />
               {allCompleted && (
                 <div className="text-center animate-fade-in-up">
-                  <Badge className="mb-4 animate-badge-bounce bg-gradient-success shadow-accent">
+                  <Badge className="mb-4 animate-badge-bounce bg-success text-success-foreground">
                     <CheckCircle2 className="h-4 w-4 mr-2" />
                     Analysis Complete!
                   </Badge>
                   <Button 
                     onClick={() => navigate('/report')}
-                    className="bg-gradient-secondary hover:shadow-secondary transform hover:scale-105 transition-all duration-300"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground transform hover:scale-105 transition-all duration-300"
                   >
                     View Results
                   </Button>
@@ -118,12 +118,12 @@ const Dashboard = () => {
 
         {/* Assessment Tabs */}
         <Tabs defaultValue="squat" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 bg-gradient-card backdrop-blur-xl border border-white/20">
+          <TabsList className="grid w-full grid-cols-3 bg-card border">
             {assessments.map((assessment) => (
               <TabsTrigger 
                 key={assessment.id} 
                 value={assessment.id}
-                className="text-white data-[state=active]:bg-gradient-primary data-[state=active]:shadow-primary transition-all duration-300"
+                className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
               >
                 <assessment.icon className="h-4 w-4 mr-2" />
                 {assessment.title}

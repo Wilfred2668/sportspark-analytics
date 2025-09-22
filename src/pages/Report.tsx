@@ -66,26 +66,26 @@ const Report = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Trophy className="h-8 w-8 text-warning animate-pulse-glow" />
-            <h1 className="text-4xl font-bold text-white">Performance Report</h1>
+            <Trophy className="h-8 w-8 text-primary animate-pulse" />
+            <h1 className="text-4xl font-bold text-foreground">Performance Report</h1>
           </div>
-          <p className="text-white/80 text-lg">Comprehensive analysis results</p>
+          <p className="text-muted-foreground text-lg">Comprehensive analysis results</p>
         </div>
 
         {/* Overall Score Card */}
-        <Card className="mb-8 bg-white/10 backdrop-blur border-white/20">
+        <Card className="mb-8 shadow-card border">
           <CardHeader className="text-center">
-            <CardTitle className="text-white text-2xl">Overall Performance Score</CardTitle>
+            <CardTitle className="text-foreground text-2xl">Overall Performance Score</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
             <div className="relative inline-block">
-              <div className="text-6xl font-bold text-white mb-4">{overallScore}</div>
-              <Badge className="absolute -top-2 -right-8 bg-gradient-secondary animate-badge-bounce">
+              <div className="text-6xl font-bold text-primary mb-4">{overallScore}</div>
+              <Badge className="absolute -top-2 -right-8 bg-success text-success-foreground animate-badge-bounce">
                 <Star className="h-4 w-4 mr-1" />
                 Excellent
               </Badge>
@@ -93,12 +93,12 @@ const Report = () => {
             <div className="flex justify-center gap-4 mt-6">
               <Button 
                 onClick={handleDownloadReport}
-                className="bg-gradient-secondary hover:shadow-secondary"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download Full Report
               </Button>
-              <Button variant="outline" className="text-white border-white/30 hover:bg-white/10">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
                 <FileText className="h-4 w-4 mr-2" />
                 View Analysis
               </Button>
@@ -108,20 +108,20 @@ const Report = () => {
 
         {/* Detailed Results */}
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 bg-white/10 backdrop-blur">
-            <TabsTrigger value="overview" className="text-white data-[state=active]:bg-white/20">
+          <TabsList className="grid w-full grid-cols-4 bg-card border">
+            <TabsTrigger value="overview" className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Trophy className="h-4 w-4 mr-2" />
               Overview
             </TabsTrigger>
-            <TabsTrigger value="squat" className="text-white data-[state=active]:bg-white/20">
+            <TabsTrigger value="squat" className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Activity className="h-4 w-4 mr-2" />
               Squat
             </TabsTrigger>
-            <TabsTrigger value="jump" className="text-white data-[state=active]:bg-white/20">
+            <TabsTrigger value="jump" className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Target className="h-4 w-4 mr-2" />
               Jump
             </TabsTrigger>
-            <TabsTrigger value="situp" className="text-white data-[state=active]:bg-white/20">
+            <TabsTrigger value="situp" className="text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               <Award className="h-4 w-4 mr-2" />
               Sit-up
             </TabsTrigger>

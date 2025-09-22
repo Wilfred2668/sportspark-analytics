@@ -40,55 +40,55 @@ export const AthleteForm = ({ data, onChange, onSubmit }: AthleteFormProps) => {
     <div className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-white">Full Name</Label>
+          <Label htmlFor="name" className="text-foreground">Full Name</Label>
           <Input
             id="name"
             value={data.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
             placeholder="Enter your full name"
-            className="bg-white/10 border-white/30 text-white placeholder:text-white/50"
+            className="bg-background border-border text-foreground placeholder:text-muted-foreground"
           />
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="age" className="text-white">Age</Label>
+          <Label htmlFor="age" className="text-foreground">Age</Label>
           <Input
             id="age"
             type="number"
             value={data.age}
             onChange={(e) => handleInputChange('age', e.target.value)}
             placeholder="Age"
-            className="bg-white/10 border-white/30 text-white placeholder:text-white/50"
+            className="bg-background border-border text-foreground placeholder:text-muted-foreground"
           />
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="height" className="text-white">Height</Label>
+          <Label htmlFor="height" className="text-foreground">Height</Label>
           <Input
             id="height"
             value={data.height}
             onChange={(e) => handleInputChange('height', e.target.value)}
             placeholder="e.g., 6'2&quot;"
-            className="bg-white/10 border-white/30 text-white placeholder:text-white/50"
+            className="bg-background border-border text-foreground placeholder:text-muted-foreground"
           />
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="weight" className="text-white">Weight</Label>
+          <Label htmlFor="weight" className="text-foreground">Weight</Label>
           <Input
             id="weight"
             value={data.weight}
             onChange={(e) => handleInputChange('weight', e.target.value)}
             placeholder="e.g., 180 lbs"
-            className="bg-white/10 border-white/30 text-white placeholder:text-white/50"
+            className="bg-background border-border text-foreground placeholder:text-muted-foreground"
           />
         </div>
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="sport" className="text-white">Primary Sport</Label>
+        <Label htmlFor="sport" className="text-foreground">Primary Sport</Label>
         <Select value={data.sport} onValueChange={(value) => handleInputChange('sport', value)}>
-          <SelectTrigger className="bg-white/10 border-white/30 text-white">
+          <SelectTrigger className="bg-background border-border text-foreground">
             <SelectValue placeholder="Select your primary sport" />
           </SelectTrigger>
           <SelectContent>
@@ -104,7 +104,7 @@ export const AthleteForm = ({ data, onChange, onSubmit }: AthleteFormProps) => {
       <Button 
         onClick={onSubmit}
         disabled={!isFormValid}
-        className="w-full bg-gradient-secondary hover:shadow-secondary text-lg py-6 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:hover:scale-100"
       >
         <Play className="h-5 w-5 mr-2" />
         Start Assessment

@@ -45,13 +45,13 @@ export const VideoUploadCard = ({
   const getStatusBadge = () => {
     switch (status) {
       case 'pending':
-        return <Badge variant="outline" className="text-white/70 border-white/30">Ready to Upload</Badge>;
+        return <Badge variant="outline" className="text-muted-foreground border-border">Ready to Upload</Badge>;
       case 'uploading':
-        return <Badge variant="secondary" className="animate-pulse">Uploading...</Badge>;
+        return <Badge className="bg-secondary text-secondary-foreground animate-pulse">Uploading...</Badge>;
       case 'analyzing':
-        return <Badge variant="secondary" className="animate-pulse">Analyzing...</Badge>;
+        return <Badge className="bg-secondary text-secondary-foreground animate-pulse">Analyzing...</Badge>;
       case 'completed':
-        return <Badge className="bg-success animate-badge-bounce"><CheckCircle2 className="h-3 w-3 mr-1" />Complete</Badge>;
+        return <Badge className="bg-success text-success-foreground animate-badge-bounce"><CheckCircle2 className="h-3 w-3 mr-1" />Complete</Badge>;
     }
   };
 
@@ -89,14 +89,14 @@ export const VideoUploadCard = ({
   };
 
   return (
-    <Card className="bg-gradient-card backdrop-blur-xl border-white/20 shadow-card hover:shadow-glow transition-all duration-500">
+    <Card className="shadow-card border hover:shadow-lg transition-all duration-500">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Icon className="h-6 w-6 text-warning drop-shadow-sm" />
+            <Icon className="h-6 w-6 text-primary" />
             <div>
-              <CardTitle className="text-white drop-shadow-sm">{title}</CardTitle>
-              <p className="text-white/70 text-sm">{description}</p>
+              <CardTitle className="text-foreground">{title}</CardTitle>
+              <p className="text-muted-foreground text-sm">{description}</p>
             </div>
           </div>
           {getStatusBadge()}
@@ -109,7 +109,7 @@ export const VideoUploadCard = ({
           className={`border-2 border-dashed rounded-lg p-8 text-center transition-all ${
             dragOver 
               ? 'border-primary bg-primary/10' 
-              : 'border-white/30 hover:border-white/50'
+              : 'border-border hover:border-primary/50'
           }`}
           onDrop={handleDrop}
           onDragOver={(e) => {
@@ -121,17 +121,17 @@ export const VideoUploadCard = ({
           {status === 'completed' ? (
             <div className="space-y-2">
               <CheckCircle2 className="h-12 w-12 text-success mx-auto" />
-              <p className="text-white font-medium">Video processed successfully!</p>
-              <p className="text-white/70 text-sm">Analysis complete with AI insights</p>
+              <p className="text-foreground font-medium">Video processed successfully!</p>
+              <p className="text-muted-foreground text-sm">Analysis complete with AI insights</p>
             </div>
           ) : (
             <div className="space-y-4">
-              <Play className="h-12 w-12 text-white/50 mx-auto" />
+              <Play className="h-12 w-12 text-muted-foreground mx-auto" />
               <div className="space-y-2">
-                <p className="text-white font-medium">
+                <p className="text-foreground font-medium">
                   Drop your video here or click to browse
                 </p>
-                <p className="text-white/70 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Supports MP4, MOV, AVI files up to 100MB
                 </p>
               </div>
@@ -139,7 +139,7 @@ export const VideoUploadCard = ({
               <Button 
                 onClick={() => fileInputRef.current?.click()}
                 disabled={status !== 'pending'}
-                className="bg-gradient-primary hover:shadow-primary"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 {getButtonContent()}
               </Button>
@@ -159,10 +159,10 @@ export const VideoUploadCard = ({
         {(status === 'uploading' || status === 'analyzing') && (
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-white/70">
+              <span className="text-muted-foreground">
                 {status === 'uploading' ? 'Uploading...' : 'Analyzing...'}
               </span>
-              <span className="text-white">{Math.round(progress)}%</span>
+              <span className="text-foreground">{Math.round(progress)}%</span>
             </div>
             <Progress value={progress} className="h-2" />
           </div>
