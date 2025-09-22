@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -46,6 +47,14 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -80,10 +89,54 @@ export default {
             height: "0",
           },
         },
+        "progress-fill": {
+          "0%": { width: "0%" },
+          "100%": { width: "var(--progress-value)" },
+        },
+        "badge-bounce": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { 
+            opacity: "1",
+            transform: "scale(1)",
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)"
+          },
+          "50%": { 
+            opacity: "0.8",
+            transform: "scale(1.02)",
+            boxShadow: "0 0 30px hsl(var(--primary) / 0.5)"
+          },
+        },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "progress-fill": "progress-fill 1s ease-out",
+        "badge-bounce": "badge-bounce 0.6s ease-in-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "fade-in-up": "fade-in-up 0.5s ease-out",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-hero": "var(--gradient-hero)",
+      },
+      boxShadow: {
+        "primary": "var(--shadow-primary)",
+        "secondary": "var(--shadow-secondary)",
+        "card": "var(--shadow-card)",
       },
     },
   },
